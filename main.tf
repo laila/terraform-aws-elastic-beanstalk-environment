@@ -409,31 +409,31 @@ locals {
       name      = "ConnectionDrainingEnabled"
       value     = "true"
     },
-    {
-      namespace = "aws:elbv2:loadbalancer"
-      name      = "AccessLogsS3Bucket"
-      value     = join("", aws_s3_bucket.elb_logs.*.id)
-    },
-    {
-      namespace = "aws:elbv2:loadbalancer"
-      name      = "AccessLogsS3Enabled"
-      value     = "false"
-    },
-    {
-      namespace = "aws:elbv2:loadbalancer"
-      name      = "SecurityGroups"
-      value     = join(",", var.loadbalancer_security_groups)
-    },
-    {
-      namespace = "aws:elbv2:loadbalancer"
-      name      = "ManagedSecurityGroup"
-      value     = var.loadbalancer_managed_security_group
-    },
-    {
-      namespace = "aws:elbv2:listener:default"
-      name      = "ListenerEnabled"
-      value     = var.http_listener_enabled || var.loadbalancer_certificate_arn == "" ? "true" : "false"
-    },
+    # {
+    #   namespace = "aws:elbv2:loadbalancer"
+    #   name      = "AccessLogsS3Bucket"
+    #   value     = join("", aws_s3_bucket.elb_logs.*.id)
+    # },
+    # {
+    #   namespace = "aws:elbv2:loadbalancer"
+    #   name      = "AccessLogsS3Enabled"
+    #   value     = "false"
+    # },
+    # {
+    #   namespace = "aws:elbv2:loadbalancer"
+    #   name      = "SecurityGroups"
+    #   value     = join(",", var.loadbalancer_security_groups)
+    # },
+    # {
+    #   namespace = "aws:elbv2:loadbalancer"
+    #   name      = "ManagedSecurityGroup"
+    #   value     = var.loadbalancer_managed_security_group
+    # },
+    # {
+    #   namespace = "aws:elbv2:listener:default"
+    #   name      = "ListenerEnabled"
+    #   value     = var.http_listener_enabled || var.loadbalancer_certificate_arn == "" ? "true" : "false"
+    # },
 #    {
 #      namespace = "aws:elbv2:listener:443"
 #      name      = "ListenerEnabled"
