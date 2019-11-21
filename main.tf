@@ -471,11 +471,6 @@ locals {
     # http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environments-cfg-applicationloadbalancer.html#alb-default-process.config
     {
       namespace = "aws:elasticbeanstalk:environment:process:default"
-      name      = "HealthCheckPath"
-      value     = var.healthcheck_url
-    },
-    {
-      namespace = "aws:elasticbeanstalk:environment:process:default"
       name      = "Port"
       value     = var.application_port
     },
