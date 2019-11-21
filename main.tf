@@ -417,7 +417,7 @@ locals {
     {
       namespace = "aws:elbv2:loadbalancer"
       name      = "AccessLogsS3Enabled"
-      value     = "true"
+      value     = "false"
     },
     {
       namespace = "aws:elbv2:loadbalancer"
