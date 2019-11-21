@@ -364,41 +364,41 @@ locals {
       name      = "ListenerEnabled"
       value     = var.http_listener_enabled || var.loadbalancer_certificate_arn == "" ? "true" : "false"
     },
-    {
-      namespace = "aws:elb:listener:443"
-      name      = "ListenerProtocol"
-      value     = "HTTPS"
-    },
-    {
-      namespace = "aws:elb:listener:443"
-      name      = "InstancePort"
-      value     = var.application_port
-    },
-    {
-      namespace = "aws:elb:listener:443"
-      name      = "SSLCertificateId"
-      value     = var.loadbalancer_certificate_arn
-    },
-    {
-      namespace = "aws:elb:listener:443"
-      name      = "ListenerEnabled"
-      value     = var.loadbalancer_certificate_arn == "" ? "false" : "true"
-    },
-    {
-      namespace = "aws:elb:listener:${var.ssh_listener_port}"
-      name      = "ListenerProtocol"
-      value     = "TCP"
-    },
-    {
-      namespace = "aws:elb:listener:${var.ssh_listener_port}"
-      name      = "InstancePort"
-      value     = "22"
-    },
-    {
-      namespace = "aws:elb:listener:${var.ssh_listener_port}"
-      name      = "ListenerEnabled"
-      value     = var.ssh_listener_enabled
-    },
+    # {
+    #   namespace = "aws:elb:listener:443"
+    #   name      = "ListenerProtocol"
+    #   value     = "HTTPS"
+    # },
+    # {
+    #   namespace = "aws:elb:listener:443"
+    #   name      = "InstancePort"
+    #   value     = var.application_port
+    # },
+    # {
+    #   namespace = "aws:elb:listener:443"
+    #   name      = "SSLCertificateId"
+    #   value     = var.loadbalancer_certificate_arn
+    # },
+    # {
+    #   namespace = "aws:elb:listener:443"
+    #   name      = "ListenerEnabled"
+    #   value     = var.loadbalancer_certificate_arn == "" ? "false" : "true"
+    # },
+    # {
+    #   namespace = "aws:elb:listener:${var.ssh_listener_port}"
+    #   name      = "ListenerProtocol"
+    #   value     = "TCP"
+    # },
+    # {
+    #   namespace = "aws:elb:listener:${var.ssh_listener_port}"
+    #   name      = "InstancePort"
+    #   value     = "22"
+    # },
+    # {
+    #   namespace = "aws:elb:listener:${var.ssh_listener_port}"
+    #   name      = "ListenerEnabled"
+    #   value     = var.ssh_listener_enabled
+    # },
     {
       namespace = "aws:elb:policies"
       name      = "ConnectionSettingIdleTimeout"
@@ -434,26 +434,26 @@ locals {
       name      = "ListenerEnabled"
       value     = var.http_listener_enabled || var.loadbalancer_certificate_arn == "" ? "true" : "false"
     },
-    {
-      namespace = "aws:elbv2:listener:443"
-      name      = "ListenerEnabled"
-      value     = var.loadbalancer_certificate_arn == "" ? "false" : "true"
-    },
-    {
-      namespace = "aws:elbv2:listener:443"
-      name      = "Protocol"
-      value     = "HTTPS"
-    },
-    {
-      namespace = "aws:elbv2:listener:443"
-      name      = "SSLCertificateArns"
-      value     = var.loadbalancer_certificate_arn
-    },
-    {
-      namespace = "aws:elbv2:listener:443"
-      name      = "SSLPolicy"
-      value     = var.loadbalancer_type == "application" ? var.loadbalancer_ssl_policy : ""
-    },
+#    {
+#      namespace = "aws:elbv2:listener:443"
+#      name      = "ListenerEnabled"
+#      value     = var.loadbalancer_certificate_arn == "" ? "false" : "true"
+#    },
+#    {
+#      namespace = "aws:elbv2:listener:443"
+#      name      = "Protocol"
+#      value     = "HTTPS"
+#    },
+#    {
+    #   namespace = "aws:elbv2:listener:443"
+    #   name      = "SSLCertificateArns"
+    #   value     = var.loadbalancer_certificate_arn
+    # },
+    # {
+    #   namespace = "aws:elbv2:listener:443"
+    #   name      = "SSLPolicy"
+    #   value     = var.loadbalancer_type == "application" ? var.loadbalancer_ssl_policy : ""
+    # },
     {
       namespace = "aws:ec2:vpc"
       name      = "ELBScheme"
