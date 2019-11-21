@@ -352,7 +352,7 @@ locals {
     {
       namespace = "aws:elb:listener"
       name      = "ListenerProtocol"
-      value     = "HTTP"
+      value     = "TCP"
     },
     {
       namespace = "aws:elb:listener"
